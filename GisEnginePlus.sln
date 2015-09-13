@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CartographicMenuBar", "Cart
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrendAnalyze", "..\TrendAnalyze\TrendAnalyze.csproj", "{5BAF7405-2B58-47AF-A590-27CB5759449B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoRedLine", "EcoRedLine\EcoRedLine.csproj", "{274DE629-E40A-4672-B70C-BA0BCFA29691}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,12 @@ Global
 		{5BAF7405-2B58-47AF-A590-27CB5759449B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BAF7405-2B58-47AF-A590-27CB5759449B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5BAF7405-2B58-47AF-A590-27CB5759449B}.Release|x86.ActiveCfg = Release|Any CPU
+		{274DE629-E40A-4672-B70C-BA0BCFA29691}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{274DE629-E40A-4672-B70C-BA0BCFA29691}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{274DE629-E40A-4672-B70C-BA0BCFA29691}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{274DE629-E40A-4672-B70C-BA0BCFA29691}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{274DE629-E40A-4672-B70C-BA0BCFA29691}.Release|Any CPU.Build.0 = Release|Any CPU
+		{274DE629-E40A-4672-B70C-BA0BCFA29691}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

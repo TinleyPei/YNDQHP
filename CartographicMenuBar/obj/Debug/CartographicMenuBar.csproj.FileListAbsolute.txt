@@ -34,3 +34,14 @@ C:\Users\lk\Desktop\MyPluginEngine_lizy0906\MyPluginEngine\CartographicMenuBar\o
 C:\Users\lk\Desktop\MyPluginEngine_lizy0906\MyPluginEngine\CartographicMenuBar\obj\Debug\CartographicMenuBar.csproj.GenerateResource.Cache
 C:\Users\lk\Desktop\MyPluginEngine_lizy0906\MyPluginEngine\CartographicMenuBar\obj\Debug\CartographicMenuBar.dll
 C:\Users\lk\Desktop\MyPluginEngine_lizy0906\MyPluginEngine\CartographicMenuBar\obj\Debug\CartographicMenuBar.pdb
+D:\77211356\GitHub\YNDQHP\CartographicMenuBar\bin\Debug\CartographicMenuBar.dll
+D:\77211356\GitHub\YNDQHP\CartographicMenuBar\bin\Debug\CartographicMenuBar.pdb
+D:\77211356\GitHub\YNDQHP\CartographicMenuBar\bin\Debug\ESRI.ArcGIS.ADF.dll
+D:\77211356\GitHub\YNDQHP\CartographicMenuBar\bin\Debug\MyPluginEngine.dll
+D:\77211356\GitHub\YNDQHP\CartographicMenuBar\bin\Debug\MyPluginEngine.pdb
+D:\77211356\GitHub\YNDQHP\CartographicMenuBar\bin\Debug\ESRI.ArcGIS.ADF.xml
+D:\77211356\GitHub\YNDQHP\CartographicMenuBar\obj\Debug\CartographicMenuBar.csprojResolveAssemblyReference.cache
+D:\77211356\GitHub\YNDQHP\CartographicMenuBar\obj\Debug\CartographicMenuBar.GetSymbol.resources
+D:\77211356\GitHub\YNDQHP\CartographicMenuBar\obj\Debug\CartographicMenuBar.csproj.GenerateResource.Cache
+D:\77211356\GitHub\YNDQHP\CartographicMenuBar\obj\Debug\CartographicMenuBar.dll
+D:\77211356\GitHub\YNDQHP\CartographicMenuBar\obj\Debug\CartographicMenuBar.pdb

@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{274DE629-E40A-4672-B70C-BA0BCFA29691}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EcoRedLine</RootNamespace>
+    <AssemblyName>EcoRedLine</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=12.0.0.1, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
+    <Reference Include="ESRI.ArcGIS.ADF.Local, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Carto, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Controls, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesRaster, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Display, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GeoAnalyst, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geodatabase, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geometry, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GlobeCore, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Output, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SpatialAnalyst, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.System, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SystemUI, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="MyPluginEngine">
+      <HintPath>..\MyPluginEngine\bin\Debug\MyPluginEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommandLibrary\ControlsAddDataCommandClass.cs" />
+    <Compile Include="CommandLibrary\ControlsExportMapCommandClass.cs" />
+    <Compile Include="CommandLibrary\ControlsNewDocCommandClass.cs" />
+    <Compile Include="CommandLibrary\ControlsPrintMapCommandClass.cs" />
+    <Compile Include="CommandLibrary\LayerOprate.cs" />
+    <Compile Include="EcoRedLineMenuBar.cs" />
+    <Compile Include="frmBiodiversity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBiodiversity.designer.cs">
+      <DependentUpon>frmBiodiversity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBiodiversityCmd.cs" />
+    <Compile Include="frmFlood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFlood.designer.cs">
+      <DependentUpon>frmFlood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFloodCmd.cs" />
+    <Compile Include="frmGeoHazards.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGeoHazards.designer.cs">
+      <DependentUpon>frmGeoHazards.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGeoHazardsCmd.cs" />
+    <Compile Include="frmTerrain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTerrain.designer.cs">
+      <DependentUpon>frmTerrain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTerrainCmd.cs" />
+    <Compile Include="frmWaterConervation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWaterConervation.designer.cs">
+      <DependentUpon>frmWaterConervation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWaterConervationCmd.cs" />
+    <Compile Include="frmWaterSoilConservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWaterSoilConservation.designer.cs">
+      <DependentUpon>frmWaterSoilConservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWaterSoilConservationCmd.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmBiodiversity.resx">
+      <DependentUpon>frmBiodiversity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFlood.resx">
+      <DependentUpon>frmFlood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGeoHazards.resx">
+      <DependentUpon>frmGeoHazards.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTerrain.resx">
+      <DependentUpon>frmTerrain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWaterConervation.resx">
+      <DependentUpon>frmWaterConervation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWaterSoilConservation.resx">
+      <DependentUpon>frmWaterSoilConservation.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CommandLibrary\ControlsAddDataCommandClass.bmp" />
+    <Content Include="CommandLibrary\ControlsExportMapCommandClass.bmp" />
+    <Content Include="CommandLibrary\ControlsNewDocCommandClass.bmp" />
+    <Content Include="CommandLibrary\ControlsPrintDocCommandClass.bmp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
