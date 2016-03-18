@@ -70,5 +70,9 @@ namespace MyPluginEngine
         /// 主程序UI界面的Visible属性
         /// </summary>
         bool Visible { get; set; }
+        /// <summary>
+        /// 主程序同步类
+        /// </summary>
+        ControlsSynchronizer MainCtrlsSynchronizer { get; set; }
     }
 }

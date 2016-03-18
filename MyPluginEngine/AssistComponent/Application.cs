@@ -37,6 +37,7 @@ namespace MyPluginEngine
         private Form _MainPlatfrom;
         private DevComponents.DotNetBar.Bar _StatusBar;
         private bool _Visible;
+        private ControlsSynchronizer _mainCtrlsSynchronizer;
 
 
         #region IApplication 成员
@@ -203,6 +204,11 @@ namespace MyPluginEngine
             }
         }
 
+        public ControlsSynchronizer MainCtrlsSynchronizer
+        {
+            get { return _mainCtrlsSynchronizer; }
+            set { this._mainCtrlsSynchronizer = value; }
+        }
         #endregion
 
     }

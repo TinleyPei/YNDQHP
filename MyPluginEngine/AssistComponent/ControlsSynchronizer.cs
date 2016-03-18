@@ -19,7 +19,7 @@ using ESRI.ArcGIS.Geometry;
  * 
  * */
 
-namespace MyMainGIS.Library
+namespace MyPluginEngine
 {
     /// <summary>
     /// 同步类
@@ -28,6 +28,10 @@ namespace MyMainGIS.Library
     {
         private IMapControlDefault m_mapControl = null;
         private IPageLayoutControlDefault m_pageLayoutControl = null;
+
+        //private ITool m_mapActiveTool = null;
+        //private ITool m_pageLayoutActiveTool = null;
+
 
         private bool m_IsMapCtrlactive = true;
 
@@ -58,6 +62,37 @@ namespace MyMainGIS.Library
         }
 
         /// <summary>
+        /// 取得当前ActiveView的类型 hwg2016/2/18新增
+        /// </summary>
+        public string ActiveViewType
+        {
+            get
+            {
+                if (m_IsMapCtrlactive)
+                    return "MapControl";
+                else
+                    return "PageLayoutControl";
+            }
+        }
+        /// <summary>
+        /// 取得当前活动的Control hwg2016/2/18新增
+        /// </summary>
+        public object ActiveControl
+        {
+            get
+            {
+                if (m_mapControl == null || m_pageLayoutControl == null)
+                    throw new Exception("ControlsSynchronizer::ActiveControl:\r\nEither MapControl or PageLayoutControl are not initialized!");
+                if (m_IsMapCtrlactive)
+                    return m_mapControl.Object;
+                else
+                    return m_pageLayoutControl.Object;
+            }
+        }
+
+
+
+        /// <summary>
         /// 将MapControl和PageLayoutControl通过同一个焦点Map进行绑定
         /// </summary>
         /// <param name="activateMapFirst">如果MapControl作为默认活动控件设置为True</param>
@@ -70,7 +105,7 @@ namespace MyMainGIS.Library
             //这里需要对引用的carto 设置嵌入互操作类型改为false
             //解释 http://www.cnblogs.com/pnljs/archive/2012/02/20/2359313.html
             IMap newMap = new MapClass();
-            newMap.Name = "地图";
+            newMap.Name = "图层";
 
             //产生一个地图容器IMaps对象
             //这里的maps是自己构建的类用来解决两个控件传入地图参数一个是IMaps一个是IMap实际上前者是后者的集合
@@ -79,6 +114,10 @@ namespace MyMainGIS.Library
 
             m_pageLayoutControl.PageLayout.ReplaceMaps(maps);
             m_mapControl.Map = newMap;
+
+            ////重设active tools
+            //m_pageLayoutActiveTool = null;
+            //m_mapActiveTool = null;
 
             if (activateMapFirst)
                 this.ActivateMap();
@@ -96,6 +135,17 @@ namespace MyMainGIS.Library
                 throw new Exception("ControlsSynchronizer::AddFrameWorkControl\r\n添加到控件没有初始化!");
             m_frameworkControls.Add(control);
         }
+        /// <summary>
+        /// Remove a framework control from the managed list of controls
+        /// </summary>
+        /// <param name="control"></param>
+        public void RemoveFrameworkControl(object control)
+        {
+            if (control == null)
+                throw new Exception("ControlsSynchronizer::RemoveFrameworkControl:\r\nControl to be removed is not initialized!");
+            m_frameworkControls.Remove(control);
+        }
+
 
         /// <summary>
         /// 当活动控件改变时,将TOCControl的Buddy控件设置为当前活动控件
@@ -135,10 +185,17 @@ namespace MyMainGIS.Library
             {
                 if (m_pageLayoutControl == null || m_mapControl == null)
                     throw new Exception("ControlsSynchronizer::ActivateMap:\r\nMapControl或PageLayoutControl没有初始化!");
+                
+                ////缓存当前PageLayout的CurrentTool
+                //if (m_pageLayoutControl.CurrentTool != null) m_pageLayoutActiveTool = m_pageLayoutControl.CurrentTool;
+                
                 //使PageLayout的视图处于非活动状态
                 m_pageLayoutControl.ActiveView.Deactivate();
                 //使MapControl视图处于活动状态
                 m_mapControl.ActiveView.Activate(m_mapControl.hWnd);
+
+                ////将之前MapControl最后使用的tool，作为活动的tool，赋给MapControl的CurrentTool
+                //if (m_mapActiveTool != null) m_mapControl.CurrentTool = m_mapActiveTool;
 
                 m_IsMapCtrlactive = true;
                 //将MapControl控件设置为TOCControl的Buddy控件
@@ -161,10 +218,17 @@ namespace MyMainGIS.Library
             {
                 if (m_pageLayoutControl == null || m_mapControl == null)
                     throw new Exception("ControlsSynchronizer::ActivatePageLayout:\r\nMapControl或PageLayoutControl没有初始化!");
+
+                ////缓存当前MapControl的CurrentTool
+                //if (m_mapControl.CurrentTool != null) m_mapActiveTool = m_mapControl.CurrentTool;
+                
                 //使m_mapControl的视图处于非活动状态
                 m_mapControl.ActiveView.Deactivate();
                 //使m_pageLayoutControl视图处于活动状态
                 m_pageLayoutControl.ActiveView.Activate(m_pageLayoutControl.hWnd);
+
+                ////将之前PageLayoutControl最后使用的tool，作为活动的tool，赋给PageLayoutControl的CurrentTool
+                //if (m_pageLayoutActiveTool != null) m_pageLayoutControl.CurrentTool = m_pageLayoutActiveTool;
 
                 m_IsMapCtrlactive = false;
                 //将MapControl控件设置为TOCControl的Buddy控件
@@ -197,6 +261,10 @@ namespace MyMainGIS.Library
 
             //将Map传递给MapControl
             m_mapControl.Map = newMap;
+
+            ////重设active tools
+            //m_pageLayoutActiveTool = null;
+            //m_mapActiveTool = null;
 
             //保证一个活动控件处于激活状态
             if (bIsMapActive)

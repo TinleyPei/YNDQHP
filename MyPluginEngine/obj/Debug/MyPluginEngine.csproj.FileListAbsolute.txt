@@ -37,4 +37,9 @@ D:\77211356\GitHub\YNDQHP\MyPluginEngine\bin\Debug\MyPluginEngine.pdb
 D:\77211356\GitHub\YNDQHP\MyPluginEngine\obj\Debug\MyPluginEngine.dll
 D:\77211356\GitHub\YNDQHP\MyPluginEngine\obj\Debug\MyPluginEngine.pdb
 D:\77211356\GitHub\YNDQHP\MyPluginEngine\obj\Debug\MyPluginEngine.csprojResolveAssemblyReference.cache
-D:\77211356\GitHub\YNDQHP\MyPluginEngine\bin\Debug\log4net.dll
+D:\BaiduYunDownload\YNDQHP\MyPluginEngine\obj\Debug\MyPluginEngine.csprojResolveAssemblyReference.cache
+D:\BaiduYunDownload\YNDQHP\MyPluginEngine\obj\Debug\MyPluginEngine.dll
+D:\BaiduYunDownload\YNDQHP\MyPluginEngine\obj\Debug\MyPluginEngine.pdb
+D:\BaiduYunDownload\YNDQHP\MyPluginEngine\bin\Debug\MyPluginEngine.dll.config
+D:\BaiduYunDownload\YNDQHP\MyPluginEngine\bin\Debug\MyPluginEngine.dll
+D:\BaiduYunDownload\YNDQHP\MyPluginEngine\bin\Debug\MyPluginEngine.pdb

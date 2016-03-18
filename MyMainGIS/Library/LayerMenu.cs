@@ -23,11 +23,13 @@ namespace MyMainGIS.Library
 {
     public class LayerMenu : ESRI.ArcGIS.ADF.BaseClasses.BaseCommand, ICommandSubType
     {
-
+        public delegate void SymbolChangedHandler();
         private IHookHelper m_hookHelper = new HookHelperClass();
         private long m_subType;
         private ILayer m_layer;
         private IMapControlDefault m_mapControl;
+
+        public event SymbolChangedHandler SymbolChanged;
 
         public LayerMenu(IMapControlDefault _mapControl)
         {
@@ -69,7 +71,7 @@ namespace MyMainGIS.Library
 
         public int GetCount()
         {
-            return 3;
+            return 4;
         }
 
         public void SetSubType(int SubType)
@@ -96,6 +98,51 @@ namespace MyMainGIS.Library
                 }
             }
         }
+
+        /// <summary>
+        /// 显示符号选择器
+        /// </summary>
+        private void ShowSymbolSelectForm()
+        {
+            ISimpleRenderer currentSimpleRender;
+
+            IMapControlDefault pMapControl = m_hookHelper.Hook as IMapControlDefault;
+            IGeoFeatureLayer pGeoFeatureLayer = pMapControl.CustomProperty as IGeoFeatureLayer;
+            if (pGeoFeatureLayer == null)
+            {
+                return;
+            }
+
+            currentSimpleRender = pGeoFeatureLayer.Renderer as ISimpleRenderer;
+            SymbolForm symbolForm = new SymbolForm(currentSimpleRender);
+            IStyleGalleryItem styleGallryItem = null;
+            switch (pGeoFeatureLayer.FeatureClass.ShapeType)
+            {
+                case esriGeometryType.esriGeometryPoint:
+                    styleGallryItem = symbolForm.GetItem(esriSymbologyStyleClass.esriStyleClassMarkerSymbols);
+                    break;
+                case esriGeometryType.esriGeometryPolyline:
+                    styleGallryItem = symbolForm.GetItem(esriSymbologyStyleClass.esriStyleClassLineSymbols);
+                    break;
+                case esriGeometryType.esriGeometryPolygon:
+                    styleGallryItem = symbolForm.GetItem(esriSymbologyStyleClass.esriStyleClassFillSymbols);
+                    break;
+            }
+
+            symbolForm.Dispose();
+            if (styleGallryItem == null)
+            {
+                return;
+            }
+
+            ISimpleRenderer simpleRender = new SimpleRendererClass();
+            simpleRender.Symbol = styleGallryItem.Item as ISymbol;
+            pGeoFeatureLayer.Renderer = simpleRender as IFeatureRenderer;
+
+            pMapControl.Refresh(esriViewDrawPhase.esriViewGeography, null, null);
+            SymbolChanged();
+        }
+
 
     }
 }

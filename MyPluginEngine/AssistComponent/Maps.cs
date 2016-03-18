@@ -16,7 +16,7 @@ using ESRI.ArcGIS.Geometry;
  * 
  * */
 
-namespace MyMainGIS.Library
+namespace MyPluginEngine
 {
     /// <summary>
     /// 地图集合,在MXD文件有可能存在多个地图
