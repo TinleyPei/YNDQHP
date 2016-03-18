@@ -130,3 +130,9 @@ D:\BaiduYunDownload\YNDQHP\MyMainGIS\bin\Debug\MyPluginEngine.pdb
 D:\BaiduYunDownload\YNDQHP\MyMainGIS\bin\Debug\office.xml
 D:\BaiduYunDownload\YNDQHP\MyMainGIS\obj\Debug\MyMainGIS.SymbolForm.resources
 D:\BaiduYunDownload\YNDQHP\MyMainGIS\obj\Debug\MyMainGIS.pdb
+D:\77211356\GitHub\YNDQHP\MyMainGIS\bin\Debug\Microsoft.Office.Interop.Excel.dll
+D:\77211356\GitHub\YNDQHP\MyMainGIS\bin\Debug\office.dll
+D:\77211356\GitHub\YNDQHP\MyMainGIS\bin\Debug\Microsoft.Vbe.Interop.dll
+D:\77211356\GitHub\YNDQHP\MyMainGIS\bin\Debug\Microsoft.Office.Interop.Excel.xml
+D:\77211356\GitHub\YNDQHP\MyMainGIS\bin\Debug\office.xml
+D:\77211356\GitHub\YNDQHP\MyMainGIS\obj\Debug\MyMainGIS.SymbolForm.resources

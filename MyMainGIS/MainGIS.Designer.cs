@@ -451,7 +451,7 @@
             this.Controls.Add(this.dockSite8);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainGIS";
-            this.Text = "GISEnginePlugin";
+            this.Text = "县域尺度低丘缓坡山地开发土地优化布局系统";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainGIS_Load);
             this.panelEx1.ResumeLayout(false);
