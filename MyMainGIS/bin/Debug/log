@@ -46,3 +46,10 @@
 201504101649   0     0     0lk D:\DLS\DLS\DLS\Input\sc1gr1.grid = GRIDASCII ( d:\github\PLUGIN~1\MYPLUG~1\MYMAIN~1\bin\debug\g_g06 )
 201504101649   0     1     0lk D:\DLS\DLS\DLS\Input\sc1gr2.grid = GRIDASCII ( d:\github\PLUGIN~1\MYPLUG~1\MYMAIN~1\bin\debug\g_g08 )
 201504101649   0     0     0lk d:\github\PLUGIN~1\MYPLUG~1\MYMAIN~1\bin\debug\tem013.txt = SAMPLE(d:\github\PLUGIN~1\MYPLUG~1\MYMAIN~1\bin\debug\g_g010, d:\git
+20160319 129   0     0     0Administrator D:\DLSTest\RunDLS\DLS\Input\region.grid = GRIDASCII ( D:\77211356\GitHub\YNDQHP\MYMAIN~1\bin\Debug\g_g02 )
+20160319 129   0     0     0Administrator D:\DLSTest\RunDLS\DLS\Input\cov1_all.0 = GRIDASCII ( d:\77211356\github\yndqhp\MYMAIN~1\bin\debug\g_g04 )
+20160319 130   0     1     0Administrator D:\DLSTest\RunDLS\DLS\Input\sc1gr0.grid = GRIDASCII ( d:\77211356\github\yndqhp\MYMAIN~1\bin\debug\g_g06 )
+20160319 130   0     0     0Administrator D:\DLSTest\RunDLS\DLS\Input\sc1gr1.grid = GRIDASCII ( d:\77211356\github\yndqhp\MYMAIN~1\bin\debug\g_g08 )
+20160319 130   0     0     0Administrator D:\DLSTest\RunDLS\DLS\Input\sc1gr2.grid = GRIDASCII ( d:\77211356\github\yndqhp\MYMAIN~1\bin\debug\g_g010 )
+20160319 130   0     0     0Administrator D:\DLSTest\RunDLS\DLS\Input\sc1gr3.grid = GRIDASCII ( d:\77211356\github\yndqhp\MYMAIN~1\bin\debug\g_g012 )
+20160319 130   0     1     0Administrator D:\DLSTest\RunDLS\DLS\Input\sc1gr3.grid = GRIDASCII ( d:\77211356\github\yndqhp\MYMAIN~1\bin\debug\g_g014 )
