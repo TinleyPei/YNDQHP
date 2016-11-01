@@ -23,13 +23,29 @@ namespace MyMainGIS
                     return;
                 }
             }
-
+            initlicense();
             //IAoInitialize m_AoInitialize = new AoInitialize();
             //esriLicenseStatus licenseStatus = esriLicenseStatus.esriLicenseUnavailable;
             //licenseStatus = m_AoInitialize.Initialize(esriLicenseProductCode.esriLicenseProductCodeEngineGeoDB);
             //Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainGIS());
+        }
+        public static void initlicense()
+        {
+            AoInitialize aoi = new AoInitialize();
+            esriLicenseExtensionCode extensionCodes = esriLicenseExtensionCode.esriLicenseExtensionCodeSpatialAnalyst; //这是解决的办法
+            esriLicenseExtensionCode extensionCode = esriLicenseExtensionCode.esriLicenseExtensionCode3DAnalyst;
+            esriLicenseProductCode pro = esriLicenseProductCode.esriLicenseProductCodeEngine;
+            if (aoi.IsProductCodeAvailable(pro) == esriLicenseStatus.esriLicenseAvailable &&
+                aoi.IsExtensionCodeAvailable(pro, extensionCode) == esriLicenseStatus.esriLicenseAvailable &&
+                aoi.IsExtensionCodeAvailable(pro, extensionCodes) == esriLicenseStatus.esriLicenseAvailable
+                 )
+            {
+                aoi.Initialize(pro);
+                aoi.CheckOutExtension(extensionCode);
+                aoi.CheckOutExtension(extensionCodes);
+            }
         }
     }
 }
