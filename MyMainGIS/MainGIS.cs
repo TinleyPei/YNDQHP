@@ -20,6 +20,7 @@ using ESRI.ArcGIS.Geometry;
 
 using MyPluginEngine;
 using MyMainGIS.Library;
+using System.IO;
 
 namespace MyMainGIS
 {
@@ -166,8 +167,28 @@ namespace MyMainGIS
             //保证宿主程序启动后不存在任何默认的处于使用状态的ITool对象
             _mapControl.CurrentTool = null;
             _pageLayoutControl.CurrentTool = null;
+
+            //主界面系统名称，获取目录下的SystemName.txt[可灵活设置]
+            string sUIName = "县域尺度低丘缓坡山地开发土地优化布局系统";
+            
+            string sTxtFileName = System.Windows.Forms.Application.StartupPath+"\\SystemName.txt";
+
+            if (!File.Exists(sTxtFileName))
+            {
+                this.FindForm().Text = sUIName;
+                return;
+            }
+
+            StreamReader sr = new StreamReader(sTxtFileName, Encoding.Default);
+            String line;
+            while ((line = sr.ReadLine()) != null)
+            {
+                sUIName=line.ToString();
+            }
+            //this.Name = sUIName;
+            
+            this.FindForm().Text = sUIName;
         }
- 
 
         #region 插件解析与加载
         //Dictionary<string, CCmdBtn> m_DicPlugins = new Dictionary<string, CCmdBtn>();
@@ -1243,6 +1264,11 @@ namespace MyMainGIS
             }
         }
         #endregion
+
+        private void MainMenu_Click(object sender, EventArgs e)
+        {
+
+        }
 
         #endregion
        
